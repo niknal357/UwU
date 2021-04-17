@@ -1,2 +1,16 @@
 <h1>UwU-afyer, for all of your UwU-afying needs</h1>
-<input></input>
+<input id="input" placeholder="non-UwU goes here"></input>
+<script>
+    var input = document.getElementById('input');
+    input._value = input.value;
+    Object.defineProperty(input, "value", {
+        get: function() {
+            return this._value;
+        },
+        set: function(v) {
+            console.log('input value changed to', v);
+            console.trace();
+            this._value = v;
+        }
+    });
+</script>
