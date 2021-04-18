@@ -1,16 +1,14 @@
 <h1>UwU-afyer, for all of your UwU-afying needs</h1>
 <input id="input" placeholder="non-UwU goes here"></input>
 <script>
-    var input = document.getElementById('input');
-    input._value = input.value;
-    Object.defineProperty(input, "value", {
-        get: function() {
-            return this._value;
-        },
-        set: function(v) {
-            console.log('input value changed to', v);
-            console.trace();
-            this._value = v;
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector("#yourGuess").onchange = check;
+    }, false);
+
+    function check(event) {
+        if (event.target.value > 10 || event.target.value < 0) {
+            alert("The number must be between 0 - 10");
+            event.target.value = 0;
         }
-    });
+    }
 </script>
