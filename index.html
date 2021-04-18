@@ -1,14 +1,19 @@
-<h1>UwU-afyer, for all of your UwU-afying needs</h1>
+<div style="font-size:27px; font-weight:500;">UwU-afyer, for all of your UwU-afying needs</div>
 <input id="input" placeholder="non-UwU goes here"></input>
+<br><br>
+<div style="font-size:large;" id="uwu">UwU will appear here</div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector("#yourGuess").onchange = check;
+        document.getElementById("input").onchange = check;
     }, false);
 
     function check(event) {
-        if (event.target.value > 10 || event.target.value < 0) {
-            alert("The number must be between 0 - 10");
-            event.target.value = 0;
+        if (event.target.value == "") {
+            document.getElementById("uwu").innerHTML = "UwU will appear here";
+        } else {
+
+            document.getElementById("uwu").innerHTML = event.target.value;
         }
+        //alert(event.target.value);
     }
 </script>
